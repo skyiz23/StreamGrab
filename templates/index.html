@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT 4K Downloader – Download YouTube Videos in 4K</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
+    <meta name="description" content="YT 4K Downloader for downloading YouTube videos in high quality, including 4K.">
+    <meta name="keywords" content="YouTube 4K downloader, YouTube video downloader, 4K video downloader, YouTube downloader">
+</head>
+<body>
+  <main class="shell">
+    <nav>
+      <div class="brand"><span class="logo">S</span> YT 4K Downloader</div>
+    </nav>
+
+    <section class="hero">
+      <p class="eyebrow">VIDEO DOWNLOADER</p>
+      <h1>Save videos.<br><span>Watch anywhere.</span></h1>
+      <p class="sub">Paste a video URL, choose your quality, and download an MP4.</p>
+
+      <div class="card">
+        <label for="url">Video URL</label>
+        <div class="input-row">
+          <input id="url" type="url" placeholder="https://www.youtube.com/watch?v=..." autocomplete="off">
+          <button id="analyze">Analyze</button>
+        </div>
+
+        <div id="preview" class="preview hidden">
+          <img id="thumb" alt="">
+          <div>
+            <h3 id="title"></h3>
+            <p id="meta"></p>
+          </div>
+        </div>
+
+        <div class="controls">
+          <div>
+            <label for="quality">Quality</label>
+            <select id="quality">
+              <option value="2160">4K — 2160p</option>
+              <option value="1440">2K — 1440p</option>
+              <option value="1080" selected>Full HD — 1080p</option>
+              <option value="720">HD — 720p</option>
+              <option value="360">SD — 360p</option>
+            </select>
+          </div>
+          <button id="download" class="primary">Download MP4</button>
+        </div>
+
+        <div id="statusBox" class="status hidden">
+          <div class="status-line">
+            <span id="statusText">Preparing...</span>
+            <span id="percent">0%</span>
+          </div>
+          <div class="bar"><div id="barFill"></div></div>
+        </div>
+
+        <div id="result" class="result hidden">
+          <div>
+            <strong>Download ready</strong>
+            <p id="resultTitle"></p>
+          </div>
+          <a id="saveBtn" class="save" href="#">Save MP4</a>
+        </div>
+
+        <p id="error" class="error hidden"></p>
+      </div>
+    </section>
+
+    <section class="features">
+      <div><b>01</b><h3>Paste URL</h3><p>Enter the video URL you want to process.</p></div>
+      <div><b>02</b><h3>Choose quality</h3><p>Select up to 4K when the source provides it.</p></div>
+      <div><b>03</b><h3>Download</h3><p>Receive a browser-downloadable MP4 file.</p></div>
+    </section>
+
+    <footer>
+      Use only with content you own or have permission to download. This demo is intended for educational use.
+    </footer>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
