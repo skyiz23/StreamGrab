@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: yt4kdownloader
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: FILE_TTL_SECONDS
+        value: "1800"
